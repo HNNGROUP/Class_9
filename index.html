@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CLASS 9</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,900;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,900;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Kanit", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      padding: 20px;
+      background-color: #ccffdf;
+    }
+
+    .download-links {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .download-links a {
+      margin: 10px 0;
+      padding: 8px 17px;
+      border-radius: 9px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: #818181 0px 0px 2px;
+    }
+
+    .download-links a:hover {
+      background: #ccc;
+    }
+
+    a {
+      text-decoration: none;
+      color: blue;
+      color: #333333;
+    }
+
+    a:hover {
+      color: darkblue;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      background-color: black;
+      color: #fff;
+    }
+
+    .download-links button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #29d366;
+      color: #fff;
+      font-weight: 900;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .upi-apps {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .upi-apps a p {
+      background-color: #f3f3f3;
+      width: 100px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 10px;
+
+    }
+
+    .upi-apps a p img {
+      width: 100%;
+    }
+
+    .steps ul {
+
+      list-style: none;
+    }
+    .wrapper{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero{  
+      padding: 19px;
+      box-shadow: 0 0 9px rgba(82, 198, 9, 0.704);
+      background-color: #fff;
+      border-radius: 9px;
+    }
+    .download-links a p{
+      text-align: left;
+    }
+    h2{
+display: flex;
+align-items: center;
+justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="hero">
+
+      <div class="steps">
+        <h2 style="text-decoration: underline; margin-bottom: 10px;">How To Pay Steps: (Class-9) <img src="upi.png" alt="" width="70px"></h2>
+        <ul>
+          <li>1. Click Download Button To Get QR CODE.</li>
+          <li>2. Open UPI App for Payment.</li>
+          <li>3. <Strong style="color: red;">Important! </Strong>Take Screen Shot of Payment And Upload in Form.</li>
+        </ul>
+      </div>
+  
+      <ul class="download-links">
+
+        <a href="QR.jpeg" download="QR.jped"  onclick="handleDownload(event, 'QR.jpeg')">
+          <P><span>C- 9 <span style="color: #29d366"> + COMMERCIAL APPL.</span></span></P><button>DOWNLOAD</button>
+        </a>
+        <a href="QR.jpeg" download="QR.jped"  onclick="handleDownload(event, 'QR.jpeg')">
+          <P><span>C- 9 <span style="color: #29d366"> + PHYSICAL EDU.</span></span></P><button>DOWNLOAD</button>
+        </a>
+        <a href="QR.jpeg" download="QR.jped"  onclick="handleDownload(event, 'QR.jpeg')">
+          <P><span>C- 9 <span style="color: #29d366"> + COMPUTER APPL.</span></span></P><button>DOWNLOAD</button>
+        </a>
+        <a href="QR.jpeg" download="QR.jped"  onclick="handleDownload(event, 'QR.jpeg')">
+          <P><span>C- 9 <span style="color: #29d366"> + COMPUTER APPL. with A.I. BOOK</span></span></P><button>DOWNLOAD</button>
+        </a>
+        <a href="QR.jpeg" download="QR.jped"  onclick="handleDownload(event, 'QR.jpeg')">
+          <P><span>C- 9 <span style="color: #29d366"> + ARTS.</span></span></P><button>DOWNLOAD</button>
+        </a>
+        <a href="QR.jpeg" download="QR.jped"  onclick="handleDownload(event, 'QR.jpeg')">
+          <P><span>C- 9 <span style="color: #29d366"> + WITHOUT OPTIONAL</span></span></P><button>DOWNLOAD</button>
+        </a>
+       
+  
+      </ul>
+
+    </div>
+  </div>
+    <script>
+    function handleDownload(event, filename) {
+      event.preventDefault();
+
+      // Check if the file is already downloaded
+      const downloaded = localStorage.getItem(filename);
+
+      if (downloaded) {
+        console.log("File already downloaded. Re-downloading...");
+      } else {
+        console.log("Downloading for the first time...");
+        localStorage.setItem(filename, true);
+      }
+
+      // Trigger download
+      const link = document.createElement("a");
+      link.href = filename;
+      link.download = filename;
+      link.click();
+
+      // Close the window after 2 seconds
+      setTimeout(() => {
+        window.close();
+      }, 3000);
+    }
+  </script>
+
+  
+</body>
+
+</html>
